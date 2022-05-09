@@ -207,12 +207,22 @@ impl<'a> View<'a> {
                     break;
                   }
                 }
-                Key::Up => {
+                Key::Char('k') => {
                   self.prev();
                 }
-                Key::Down => {
+                Key::Char('j') => {
                   self.next();
                 }
+                Key::Char('l') => match self.matches.iter().enumerate().find(|&h| h.0 == self.skip) {
+                      Some(hm) => {
+                        self.chosen.push((hm.1.text.to_string(), false));
+
+                        if !self.multi {
+                          return CaptureEvent::Hint;
+                        }
+                      }
+                      _ => panic!("Match not found?"),
+                    }
                 Key::Left => {
                   self.prev();
                 }

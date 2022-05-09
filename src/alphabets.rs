@@ -3,7 +3,7 @@ use std::collections::HashMap;
 const ALPHABETS: [(&'static str, &'static str); 22] = [
   ("numeric", "1234567890"),
   ("abcd", "abcd"),
-  ("qwerty", "asdfqwerzxcvjklmiuopghtybn"),
+  ("qwerty", "asdfqwerzxcviuopghtybn"),
   ("qwerty-homerow", "asdfjklgh"),
   ("qwerty-left-hand", "asdfqwerzcxv"),
   ("qwerty-right-hand", "jkluiopmyhn"),
